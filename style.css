@@ -1,0 +1,96 @@
+/* General body styling */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Headings styling */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Georgia', serif;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+h1 {
+    font-size: 2.5em;
+    border-bottom: 2px solid #3498db;
+    padding-bottom: 10px;
+}
+
+h2 {
+    font-size: 2em;
+    border-bottom: 1px solid #3498db;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 1.75em;
+    color: #2980b9;
+}
+
+/* Paragraph styling */
+p {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* Add some spacing */
+.container {
+    padding: 20px;
+    max-width: 800px; /* Match the header container width */
+    margin: 0 auto; /* Center the body content */
+    background: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Menu Bar Styling */
+header {
+    background-color: #f9f9f9; /* Light background for contrast */
+    color: #333; /* Dark text for readability */
+    padding: 10px 0;
+    position: sticky; /* Keeps the menu bar at the top when scrolling */
+    top: 0;
+    z-index: 1000;
+    width: 100%; /* Full width of the page */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 800px; /* Match the body container width */
+    margin: 0 auto; /* Center the menu bar */
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333; /* Dark text for the logo */
+    text-decoration: none; /* Remove underline */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between menu items */
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333; /* Dark text for menu links */
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #3498db; /* Highlight color on hover */
+}
