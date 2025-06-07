@@ -12,22 +12,82 @@
 
     <header>
         <div class="container">
-            <h1 class="logo">SV Consulting</h1>
+            <h1 class="logo">
+                <img src="images/logo.png" alt="SV Consulting Logo" class="logo-icon" />
+                SV Consulting
+            </h1>
             <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
+                <ul class="full-menu">
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="services.html">Services</a></li>
                     <li><a href="about.html">About</a></li>
                     <li><a href="contact.html">Contact Us</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
                 </ul>
+                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
             </nav>
         </div>
     </header>
 
+
+
+    <!-- Image Slider -->
+    <div class="slider">
+        <div class="slides">
+            <div class="slide">
+                <a href="images/slider/image1.jpg" target="_blank">
+                    <img src="images/slider/image1.jpg" alt="Slide 1">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="images/slider/image2.jpg" target="_blank">
+                    <img src="images/slider/image2.jpg" alt="Slide 2">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="images/slider/image3.jpg" target="_blank">
+                    <img src="images/slider/image3.jpg" alt="Slide 3">
+                </a>
+            </div>
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+
+
     <section class="section">
         <div class="container">
-            <h2>Empowering Your Business</h2>
-            <p>SV Consulting helps businesses grow through expert guidance and tailored solutions.</p>
+            <h2>What We Do</h2>
+            <p>
+                Sparrow Viewing (Pty) Ltd. t/a SV Consulting is a specialist service provider operating within the
+                mining and exploration industries. Our core business activities focus on the following areas:
+            </p>
+
+            <h3>Geological Services:</h3>
+            <p>
+                We offer a comprehensive range of geological support, including mineral exploration, geological mapping
+                and resource evaluation. Our experienced geologist assists mining companies in understanding and
+                optimizing their mineral assets.
+            </p>
+
+            <h3>Project Support Services:</h3>
+            <p>We provide essential support for mining and exploration projects, including project management, field
+                operations logistics, site supervision, data management, and technical reporting. We ensure projects are
+                completed on schedule, within budget, and to the highest professional standards.</p>
+
+            <h3>Drone Operations and Aerial Surveys:</h3>
+            <p>We are licensed drone operators specialising in the mining sector. Our services include aerial
+                photography, blast monitoring, infrastructure inspections, and environmental monitoring. Our drone
+                technology delivers high-resolution, real-time data, enabling clients to make informed operational
+                decisions.</p>
+            </br>
+            <p>All our operations are carried out in strict compliance with industry regulations and best practices,
+                ensuring safety, efficiency, and environmental responsibility.</p>
+            </br>
+            <p>We remain committed to providing innovative, cost-effective solutions that add value to our clients'
+                operations.</p>
+
         </div>
     </section>
 
@@ -36,6 +96,53 @@
             <p>&copy; 2025 SV Consulting. All rights reserved.</p>
         </div>
     </footer>
+
+    <script>
+        let currentIndex = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelector('.slides');
+            const totalSlides = slides.children.length;
+
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        // Add or remove 'scrolled' class based on scroll position
+        window.addEventListener('scroll', function () {
+            const scrollY = window.scrollY;
+            const body = document.body;
+            const header = document.querySelector('header');
+
+            if (scrollY > 10) {
+                body.classList.add('scrolled');
+                header.classList.add('scrolled');
+            } else {
+                body.classList.remove('scrolled');
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // Optional: You can later make this toggle an actual menu
+        function toggleMenu() {
+            alert("Hamburger clicked — implement mobile nav here if needed!");
+        }
+
+        let lastScroll = window.scrollY;
+
+        window.addEventListener('scroll', function () {
+            const currentScroll = window.scrollY;
+            const header = document.querySelector('header');
+
+            // Shrink if scrolled more than 10px
+            if (currentScroll > 10) {
+                header.classList.add('shrunk');
+            } else {
+                header.classList.remove('shrunk');
+            }
+        });
+
+    </script>
 
 </body>
 
