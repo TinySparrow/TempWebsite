@@ -11,22 +11,19 @@
 <body>
 
     <header>
-        <div class="container">
-            <h1 class="logo">
-                <img src="images/logo.png" alt="SV Consulting Logo" class="logo-icon" />
-                SV Consulting
-            </h1>
-            <nav>
-                <ul class="full-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact Us</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-                <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
-            </nav>
-        </div>
+        <h1 class="logo">
+            <img src="images/logo.png" alt="SV Consulting Logo" class="logo-icon" />
+            SV Consulting
+        </h1>
+        <nav>
+            <ul class="full-menu">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <!-- <li><a href="gallery.html">Gallery</a></li> -->
+            </ul>
+        </nav>
     </header>
 
 
@@ -92,9 +89,7 @@
     </section>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2025 SV Consulting. All rights reserved.</p>
-        </div>
+        <p>&copy; 2025 SV Consulting. All rights reserved.</p>
     </footer>
 
     <script>
@@ -108,40 +103,15 @@
             slides.style.transform = `translateX(-${currentIndex * 100}%)`;
         }
 
-        // Add or remove 'scrolled' class based on scroll position
+        // Shrink header on scroll
         window.addEventListener('scroll', function () {
-            const scrollY = window.scrollY;
-            const body = document.body;
             const header = document.querySelector('header');
-
-            if (scrollY > 10) {
-                body.classList.add('scrolled');
-                header.classList.add('scrolled');
-            } else {
-                body.classList.remove('scrolled');
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Optional: You can later make this toggle an actual menu
-        function toggleMenu() {
-            alert("Hamburger clicked — implement mobile nav here if needed!");
-        }
-
-        let lastScroll = window.scrollY;
-
-        window.addEventListener('scroll', function () {
-            const currentScroll = window.scrollY;
-            const header = document.querySelector('header');
-
-            // Shrink if scrolled more than 10px
-            if (currentScroll > 10) {
+            if (window.scrollY > 10) {
                 header.classList.add('shrunk');
             } else {
                 header.classList.remove('shrunk');
             }
         });
-
     </script>
 
 </body>
